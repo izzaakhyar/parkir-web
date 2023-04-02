@@ -11,5 +11,7 @@ class parkir extends Model
     protected $fillable = ['platNomor'];
     protected $primaryKey = 'id';
 
-    
+    public function ruang() {
+        return $this->hasOne('ruang');
+    }
 }

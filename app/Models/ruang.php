@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ruang extends Model
 {
-    
+    use HasFactory;
 
     protected $table = 'ruangan';
-    protected $fillable = ['no_kendaraan', 'ruang'];
-    protected $primaryKey = 'id';
+    
 
     public function parkir() {
         return $this->belongsTo('parkir');

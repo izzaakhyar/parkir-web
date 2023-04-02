@@ -21,7 +21,6 @@ class pruang1Controller extends Controller
     public function edit($id)
     {
         $data_ruang = \App\Models\ruang::find($id);
-        
         return view('editRuang.index', ['data_ruang' => $data_ruang]);
     }
 

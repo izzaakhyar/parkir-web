@@ -1,4 +1,5 @@
 @foreach($data_ruang as $ruang)
+{{$ruang->no_kendaraan}}
 <div class="box" style='width:170px; height:200px; background-color:lightgreen; border-radius:15px; display:inline-block'>
     <div class="ruang" style='color:black; text-align:center; padding-top:15px'>
     {{$ruang->ruang}}
@@ -8,7 +9,7 @@
     @if($ruang->status == 0)
                         KOSONG
                     @else
-                        {{$ruang->platNomor}}
+                        {{$ruang->no_kendaraan}}
                     @endif
                     
     </div>
