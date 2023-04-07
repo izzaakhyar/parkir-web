@@ -14,14 +14,22 @@ class pruang1Controller extends Controller
      */
     public function index()
     {
-        $data_ruang = \App\Models\ruang::all();
-        return view('pruang1.index', ['data_ruang' => $data_ruang]);
+        $data_parkir = \App\Models\parkir::all();
+        return view('pruang1.index', ['data_parkir' => $data_parkir]);
     }
 
-    public function edit($id)
-    {
-        $data_ruang = \App\Models\ruang::find($id);
-        return view('editRuang.index', ['data_ruang' => $data_ruang]);
+    public function edit($id){
+        $data_parkir = \App\Models\parkir::find($id);
+        $data_ruang = \App\Models\ruang::all();
+        return view('editRuang.index', compact('data_parkir', 'data_ruang'));
+    }
+
+    public function update(Request $request,$id) {
+        $data_parkir = \App\Models\parkir::find($id);
+        // $data_ruang = \App\Models\ruang::find($id);
+        // $data_ruang->update($request->all());
+        $data_parkir->update($request->all());
+        return redirect('/pruang1')->with('sukses','Data berhasil diupdate');
     }
 
     /**
@@ -71,10 +79,7 @@ class pruang1Controller extends Controller
      * @param  \App\Models\ruang  $ruang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ruang $ruang)
-    {
-        //
-    }
+    
 
     /**
      * Remove the specified resource from storage.

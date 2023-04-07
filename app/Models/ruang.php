@@ -10,9 +10,9 @@ class ruang extends Model
     use HasFactory;
 
     protected $table = 'ruangan';
-    
+    protected $fillable = ['ruang, no_kendaraan'];
 
     public function parkir() {
-        return $this->belongsTo('parkir');
+        return $this->hasOne('parkir');
     }
 }

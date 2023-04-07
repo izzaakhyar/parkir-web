@@ -16,10 +16,15 @@ class CreateParkirTable extends Migration
         Schema::create('parkir', function (Blueprint $table) {
             $table->id();
             $table->string('platNomor', 8)->unique();
-            $table->string('ruang', 3)->nullable();
+            $table->string('ruangParkir', 3)->nullable();
             $table->tinyInteger('sudah_masuk')->default('0');
             $table->timestamps();
         });
+
+        // Schema::table('parkir', function (Blueprint $table) {
+        //     $table->foreign('ruangParkir')->references('ruang')->on('ruangan')
+        //         ->onDelete('cascade')->onUpdate('cascade');
+        // });
     }
 
     /**

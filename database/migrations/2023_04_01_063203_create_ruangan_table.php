@@ -15,16 +15,16 @@ class CreateRuanganTable extends Migration
     {
         Schema::create('ruangan', function (Blueprint $table) {
             $table->id();
-            $table->string('no_kendaraan', 8)->nullable();
-            $table->string('ruang', 3);
+            // $table->string('no_kendaraan', 8)->nullable();
+            $table->string('ruang', 3)->unique();
             $table->tinyInteger('status')->default('0');
             $table->timestamps();
         });
 
-        Schema::table('ruangan', function (Blueprint $table) {
-            $table->foreign('no_kendaraan')->references('platNomor')->on('parkir')
-                ->onDelete('cascade')->onUpdate('cascade');
-        });
+        // Schema::table('ruangan', function (Blueprint $table) {
+        //     $table->foreign('no_kendaraan')->references('platNomor')->on('parkir')
+        //         ->onDelete('cascade')->onUpdate('cascade');
+        // });
     }
 
     /**

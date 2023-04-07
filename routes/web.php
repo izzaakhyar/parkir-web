@@ -46,6 +46,7 @@ Route::get('/pmasuk1', '\App\Http\Controllers\pmasuk1Controller@index');
 Route::post('/pmasuk1/add', '\App\Http\Controllers\pmasuk1Controller@add');
 Route::get('/pruang1', '\App\Http\Controllers\pruang1Controller@index');
 Route::get('/pruang1/{id}/edit', '\App\Http\Controllers\pruang1Controller@edit');
+Route::post('/pruang1/{id}/update', '\App\Http\Controllers\pruang1Controller@update');
 
 Route::get('/mall2', function() {
     return view('mall2.index');
