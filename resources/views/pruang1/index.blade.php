@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha1-dist/css/app.css">
     </head>
-<nav class="navbar navbar-expand-lg bg-light" >
+<nav class="navbar navbar-expand-lg bg-dark"  >
   <div class="container-fluid">
     <a class="navbar-brand" href="/dashboard">Dashboard Mall 1</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,9 +62,9 @@
                 
                 <tr>
                     @if($parkir->sudah_masuk == 0)
-                        <tr style = 'background-color:red; color:white'>
+                        <tr style = 'background-color:green; color:white'>
                     @else
-                        <tr style = 'background-color:lightgreen'>
+                        <tr style = 'background-color:red; color:white'>
                     @endif
                     <td>{{$parkir->id}}</td>
                     <td>{{$parkir->platNomor}}</td>

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha1-dist/css/app.css">
     </head>
-<nav class="navbar navbar-expand-lg bg-light" >
+<nav class="navbar navbar-expand-lg bg-dark"  >
   <div class="container-fluid">
     <a class="navbar-brand" href="/dashboard">Dashboard Mall 1</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,83 +40,52 @@
     </div>
   </div>
 </nav>
-@extends('layouts.master')
-@section('content')
+<!-- @extends('layouts.master') -->
+<!-- @section('content')
     @if(session('sukses'))
         <div class="alert alert-success" role="alert">
         {{session('sukses')}}
         </div>
-    @endif
-<div class="row">
+    @endif -->
+<div class="row" style="margin-left: -100px">
             <div class="col-6">
                 <h1>DATA Parkir</h1>
-            </div>
-            <div class="col-6">
-                <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
-                Tambah Kendaraan
-                </button>
-
             </div>
             <table class="table">
                 <tr>
                     <th>ID Parkir</th>
                     <th>Plat Nomor</th>
                     <th>Ruang</th>
-                    <th>Detail</th>
+                    <th>Aksi</th>
                 </tr>
                 @foreach($data_parkir as $parkir)
                 
                 <tr>
                     @if($parkir->sudah_masuk == 0)
-                        <tr style = 'background-color:red; color:white'>
+                        <tr style = 'background-color:green; color:white'>
                     @else
-                        <tr style = 'background-color:lightgreen'>
+                        <tr style = 'background-color:red; color:white'>
                     @endif
                     <td>{{$parkir->id}}</td>
                     <td>{{$parkir->platNomor}}</td>
-                    <td>{{$parkir->ruangParkir}}</td>
-                    
                     @if($parkir->sudah_masuk == 0)
-                        <td>Belum masuk</td>
+                        <td>Sudah Keluar</td>
                     @else
-                        <td>Sudah masuk</td>
+                        <td>{{$parkir->ruangParkir}}</td>
                     @endif
-
+                    @if($parkir->sudah_masuk == 0)
+                        <td>Tidak ada aksi yang tersedia</td>
+                    @else
+                    <td>
+                    <a href="/pkeluar1/{{$parkir->id}}/edit" class="btn btn-danger btn-sm" onclick="return confirm
+                        ('Apakah anda yakin ingin menghapus?')">Keluarkan</a>
+                    </td>
+                    @endif
                 </tr>
                 @endforeach
             </table>
         </div>
     </div>
-
-    <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tambah Kendaraan</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <form action="/pmasuk1/add" method="POST">
-            {{csrf_field()}}
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Plat Nomor</label>
-                    <input type="text" name="platNomor" class="form-control" placeholder="Plat Nomor"
-                    value="{{old('platNomor')}}">
-                    @error('platNomor')
-                        <div class="text-danger small">{{ $message }}</div>
-                    @enderror
-                </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-        </div>
-    </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 </html>
-@endsection
+<!-- @endsection -->
