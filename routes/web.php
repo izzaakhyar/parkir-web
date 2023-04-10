@@ -28,9 +28,8 @@ Route::get('/', function () {
      return view('about');
  });
 
-Route::get('/login', function() {
-    return view('login.index');
-});
+Route::get('/login', '\App\Http\Controllers\loginController@index')->middleware('guest');
+Route::post('/login', '\App\Http\Controllers\loginController@authenticate');
 
 Route::get('/dashboard', function() {
     return view('dashboard.index');

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha1-dist/css/app.css">
     </head>
-<nav class="navbar navbar-expand-lg bg-dark"  >
+<nav class="navbar navbar-expand-lg bg-light"  >
   <div class="container-fluid">
     <a class="navbar-brand" href="/dashboard">Dashboard Mall 1</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
