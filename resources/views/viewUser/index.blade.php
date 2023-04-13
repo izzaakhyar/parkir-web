@@ -31,9 +31,9 @@
           <a class="nav-link" href="/pegawai">Data Petugas</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form action="/logout" method="post">
+        @csrf
+        <button type="submit" class="btn btn-outline-success"><i class="bi bi-box-arrow-right"></i>Logout</button>
       </form>
     </div>
   </div>

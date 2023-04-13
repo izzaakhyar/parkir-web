@@ -34,6 +34,17 @@ class loginController extends Controller
         //dd('berhasil');
     }
 
+    public function logout(request $request)
+    {
+        Auth::logout();
+ 
+        $request->session()->invalidate();
+ 
+        $request->session()->regenerateToken();
+ 
+        return redirect('/login');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
