@@ -8,18 +8,10 @@ class cekRole
 {
     public function handle($request, Closure $next, ...$roles)
     {
-        if (!auth()->check()) {
-            return redirect('/login');
+        if (! $request->user() || ! in_array($request->user()->role, $roles)) {
+            abort(403, 'Anda tidak mempunyai hak untuk mengakses halaman ini');
         }
-
-        $user = auth()->user();
-        foreach ($roles as $role) {
-            if ($user->role === $role) {
-                return $next($request);
-            }
-        }
-
-        return redirect('/login');
+        return $next($request);
     }
 
     

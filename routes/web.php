@@ -34,7 +34,7 @@ Route::post('/logout', '\App\Http\Controllers\loginController@logout');
 
 Route::get('/dashboard', function() {
     return view('dashboard.index');
-});
+})->name('dashboard')->middleware('auth');
  
 Route::get('/pegawai', '\App\Http\Controllers\AdminController@index')->middleware(['auth', 'role:Admin']); // Menampilkan data yang ada di database
 Route::post('/pegawai/create', '\App\Http\Controllers\AdminController@create')->middleware(['auth', 'role:Admin']); // Membuat data baru
@@ -45,20 +45,20 @@ Route::get('/pegawai/{id}/delete', '\App\Http\Controllers\AdminController@delete
 Route::get('/mall1', function() {
     return view('mall1.index');
 });
-asdasd
+
 // Petugas Masuk Mall 1
-Route::get('/pmasuk1', '\App\Http\Controllers\pmasuk1Controller@index')->middleware(['auth', 'role:Petugas Masuk, Admin']);
-Route::post('/pmasuk1/add', '\App\Http\Controllers\pmasuk1Controller@add')->middleware(['auth', 'role:Petugas Masuk, Admin']);
+Route::get('/pmasuk1', '\App\Http\Controllers\pmasuk1Controller@index')->name('pmasuk1')->middleware(['auth', 'role:Petugas Masuk,Admin']);
+Route::post('/pmasuk1/add', '\App\Http\Controllers\pmasuk1Controller@add')->middleware(['auth', 'role:Petugas Masuk,Admin']);
 
 // Petugas Ruang Mall 1
-Route::get('/pruang1', '\App\Http\Controllers\pruang1Controller@index')->middleware(['auth', 'role:Petugas Ruang, Admin']);
-Route::get('/pruang1/{id}/edit', '\App\Http\Controllers\pruang1Controller@edit')->middleware(['auth', 'role:Petugas Ruang, Admin']);
-Route::post('/pruang1/{id}/update', '\App\Http\Controllers\pruang1Controller@update')->middleware(['auth', 'role:Petugas Ruang, Admin']);
+Route::get('/pruang1', '\App\Http\Controllers\pruang1Controller@index')->middleware(['auth', 'role:Petugas Ruang,Admin']);
+Route::get('/pruang1/{id}/edit', '\App\Http\Controllers\pruang1Controller@edit')->middleware(['auth', 'role:Petugas Ruang,Admin']);
+Route::post('/pruang1/{id}/update', '\App\Http\Controllers\pruang1Controller@update')->middleware(['auth', 'role:Petugas Ruang,Admin']);
 
 // Petugas Keluar Mall 1
-Route::get('/pkeluar1', '\App\Http\Controllers\pkeluar1Controller@index')->middleware(['auth', 'role:Petugas Keluar, Admin']);
-Route::get('/pkeluar1/{id}/edit', '\App\Http\Controllers\pkeluar1Controller@edit')->middleware(['auth', 'role:Petugas Keluar, Admin']);
-Route::post('/pkeluar1/{id}/update', '\App\Http\Controllers\pkeluar1Controller@update')->middleware(['auth', 'role:Petugas Keluar, Admin']);
+Route::get('/pkeluar1', '\App\Http\Controllers\pkeluar1Controller@index')->middleware(['auth', 'role:Petugas Keluar,Admin']);
+Route::get('/pkeluar1/{id}/edit', '\App\Http\Controllers\pkeluar1Controller@edit')->middleware(['auth', 'role:Petugas Keluar,Admin']);
+Route::post('/pkeluar1/{id}/update', '\App\Http\Controllers\pkeluar1Controller@update')->middleware(['auth', 'role:Petugas Keluar,Admin']);
 
 Route::get('/mall2', function() {
     return view('mall2.index');
