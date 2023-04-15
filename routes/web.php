@@ -45,7 +45,7 @@ Route::get('/pegawai/{id}/delete', '\App\Http\Controllers\AdminController@delete
 Route::get('/mall1', function() {
     return view('mall1.index');
 });
-
+asdasd
 // Petugas Masuk Mall 1
 Route::get('/pmasuk1', '\App\Http\Controllers\pmasuk1Controller@index')->middleware(['auth', 'role:Petugas Masuk, Admin']);
 Route::post('/pmasuk1/add', '\App\Http\Controllers\pmasuk1Controller@add')->middleware(['auth', 'role:Petugas Masuk, Admin']);
