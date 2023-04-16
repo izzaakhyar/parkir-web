@@ -57,21 +57,23 @@
             </div>
             <table class="table">
                 <tr style="background-color:#444654">
-                    <th style="color:white">ID Parkir</th>
+                    <th style="color:white">No.</th>
                     <th style="color:white">Plat Nomor</th>
                     <th style="color:white">Jumlah Kunjungan</th>
                     <th style="color:white">Tarif</th>
                 </tr>
-                @foreach($data_parkir as $parkir)
-                @if ($parkir->tarif > 0)
-                <tr>
-                    <td>{{$parkir->id}}</td>
-                    <td>{{$parkir->platNomor}}</td>
-                    <td>{{$parkir->pernah_masuk}}</td>
-                    <td>{{$parkir->tarif}}</td>
-                </tr>
-                @endif
-                @endforeach
+                
+                  @foreach($data_parkir as $parkir)
+                  @if ($parkir->tarif > 0)
+                  <tr>
+                      <td>{{$i}}</td>
+                      <td>{{$parkir->platNomor}}</td>
+                      <td>{{$parkir->pernah_masuk}}</td>
+                      <td>{{$parkir->tarif}}</td>
+                  </tr>
+                  <?php $i++; ?>
+                  @endif
+                  @endforeach
                 <tr style="background-color:#444654">
                     <td style="color:white">Total Pemasukan:</td>
                     <td></td>

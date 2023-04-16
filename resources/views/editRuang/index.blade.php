@@ -19,13 +19,24 @@
                 
                 <div class="form-group">
                 <label for="exampleFormControlSelect1">Plat Nomor yang tersedia</label>
-                <!-- <select class="form-control" name="ruang" id="exampleFormControlSelect1">
-                    @foreach ($data_ruang as $ruang)
-                    <option value="{{$data_parkir->ruangParkir}}">{{$ruang->ruang}}</option>
-                    @endforeach
-                </select> -->
-                <input type="text" name="ruangParkir" class="form-control" id="exampleInputEmail1" aria-describedby
-                    ="emailHelp" placeholder="Ruang" value="{{$data_parkir->ruangParkir}}">
+                <select class="form-control" name="ruangParkir" id="exampleFormControlSelect1">
+                    
+                    <option value="" disabled selected>Lantai 1...</option>
+                    @for ($i = 0; $i < count($ruangan1); $i++)
+                        <option value="{{$ruangan1[$i]}}">{{$ruangan1[$i]}}</option>
+                    @endfor
+
+                    <option value="" disabled selected>Lantai 2...</option>
+                    @for ($i = 0; $i < count($ruangan2); $i++)
+                        <option value="{{$ruangan2[$i]}}">{{$ruangan2[$i]}}</option>
+                    @endfor
+
+                    <option value="" disabled selected>Lantai 3...</option>
+                    @for ($i = 0; $i < count($ruangan3); $i++)
+                        <option value="{{$ruangan3[$i]}}">{{$ruangan3[$i]}}</option>
+                    @endfor
+                    
+                </select>
                 </div>
                 <div class="form-group" hidden>
                 <label for="exampleFormControlSelect1">Plat Nomor yang tersedia</label>

@@ -32,7 +32,7 @@
             
           
             <button class="btn" style="width:650px; height:150px; border-radius:10px; background-color:#ec5453; border: 2px solid black">
-            <a class="display-4" style="margin-left:10px; color:white; text-decoration:none">Logout</a>
+            <i class="bi bi-box-arrow-left" style="margin-right: 5px; font-size: 53px"></i><a class="display-4" style="margin-left:10px; color:white; text-decoration:none">Logout</a>
             </button>
             </form>
             <hr class="my-4">

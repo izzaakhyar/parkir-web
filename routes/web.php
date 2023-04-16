@@ -14,24 +14,32 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
  
  //
- Route::get('/home', function(){
-     return view('Home');
- });
+//  Route::get('/home', function(){
+//      return view('Home');
+//  });
 
- Route::get('/about', function(){
-     return view('about');
- });
+//  Route::get('/about', function(){
+//      return view('about');
+//  });
 
+// Halaman Utama
+Route::get('/', function () {
+    return view('homepage.index');
+});
+
+// Untuk Guest
+Route::get('/parkir1', '\App\Http\Controllers\guestController@index');
+
+// Login & Logout
 Route::get('/login', '\App\Http\Controllers\loginController@index')->name('login')->middleware('guest');
 Route::post('/login', '\App\Http\Controllers\loginController@authenticate');
 Route::post('/logout', '\App\Http\Controllers\loginController@logout');
 
+// ADMIN
 Route::get('/dashboard', function() {
     return view('dashboard.index');
 })->name('dashboard')->middleware('auth', 'role:Admin');
