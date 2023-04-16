@@ -22,9 +22,13 @@ class loginController extends Controller
     $role = Auth::user()->role;
 
     if ($role == 'Admin') {
-        return redirect('dashboard');
+        return route('dashboard');
     } elseif ($role == 'Petugas Masuk') {
         return route('pmasuk1');
+    } elseif ($role == 'Petugas Ruang') {
+        return route('pruang1');
+    } elseif ($role == 'Petugas Keluar') {
+        return route('pkeluar1');
     } else {
         return route('login');
     }

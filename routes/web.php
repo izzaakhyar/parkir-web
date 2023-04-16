@@ -28,13 +28,15 @@ Route::get('/', function () {
      return view('about');
  });
 
-Route::get('/login', '\App\Http\Controllers\loginController@index')->middleware('guest');
+Route::get('/login', '\App\Http\Controllers\loginController@index')->name('login')->middleware('guest');
 Route::post('/login', '\App\Http\Controllers\loginController@authenticate');
 Route::post('/logout', '\App\Http\Controllers\loginController@logout');
 
 Route::get('/dashboard', function() {
     return view('dashboard.index');
-})->name('dashboard')->middleware('auth');
+})->name('dashboard')->middleware('auth', 'role:Admin');
+
+Route::get('/keuangan', '\App\Http\Controllers\laporanController@index')->middleware(['auth', 'role:Admin']);
  
 Route::get('/pegawai', '\App\Http\Controllers\AdminController@index')->middleware(['auth', 'role:Admin']); // Menampilkan data yang ada di database
 Route::post('/pegawai/create', '\App\Http\Controllers\AdminController@create')->middleware(['auth', 'role:Admin']); // Membuat data baru
@@ -51,12 +53,12 @@ Route::get('/pmasuk1', '\App\Http\Controllers\pmasuk1Controller@index')->name('p
 Route::post('/pmasuk1/add', '\App\Http\Controllers\pmasuk1Controller@add')->middleware(['auth', 'role:Petugas Masuk,Admin']);
 
 // Petugas Ruang Mall 1
-Route::get('/pruang1', '\App\Http\Controllers\pruang1Controller@index')->middleware(['auth', 'role:Petugas Ruang,Admin']);
+Route::get('/pruang1', '\App\Http\Controllers\pruang1Controller@index')->name('pruang1')->middleware(['auth', 'role:Petugas Ruang,Admin']);
 Route::get('/pruang1/{id}/edit', '\App\Http\Controllers\pruang1Controller@edit')->middleware(['auth', 'role:Petugas Ruang,Admin']);
 Route::post('/pruang1/{id}/update', '\App\Http\Controllers\pruang1Controller@update')->middleware(['auth', 'role:Petugas Ruang,Admin']);
 
 // Petugas Keluar Mall 1
-Route::get('/pkeluar1', '\App\Http\Controllers\pkeluar1Controller@index')->middleware(['auth', 'role:Petugas Keluar,Admin']);
+Route::get('/pkeluar1', '\App\Http\Controllers\pkeluar1Controller@index')->name('pkeluar1')->middleware(['auth', 'role:Petugas Keluar,Admin']);
 Route::get('/pkeluar1/{id}/edit', '\App\Http\Controllers\pkeluar1Controller@edit')->middleware(['auth', 'role:Petugas Keluar,Admin']);
 Route::post('/pkeluar1/{id}/update', '\App\Http\Controllers\pkeluar1Controller@update')->middleware(['auth', 'role:Petugas Keluar,Admin']);
 
