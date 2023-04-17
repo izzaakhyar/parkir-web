@@ -5,9 +5,70 @@
     <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha1-dist/css/app.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      body {
+  /* background: linear-gradient(to left, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1)); */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.mall-container {
+  width: 1400px;
+  margin: auto;
+  margin-top: 300px;
+  margin-left: 190px;
+  border-radius: 10px;
+  background-color: cream;
+}
+
+.mall {
+  width: 400px;
+  display: inline-block;
+  float: left;
+  margin-right: 67px;
+  margin-left: 6px;
+}
+
+.mall:last-child {
+  margin-right: 10px;
+}
+
+button {
+  width: 400px;
+  height: 150px;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  color: black;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 500px 0 rgba(0,0,0,0.19);
+            transition-duration: 0.2s;
+  margin-bottom: 100px;
+}
+
+
+    </style>
     </head>
 
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg bg-dark" style="outline: 2px solid black">
     <div class="container-fluid">
       <a class="navbar-brand" href="/" style="color:white">Sistem Parkir</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +87,8 @@
     </div>
   </nav>
 
+    
+  <!-- <body style="background-color: #627D9A">
   <div class="box" style="width:1400px; margin:auto; margin-top:315px; background-color:cream; border-radius:10px">
         <div class="boxMall" style="width:400px; display:inline-block">
             <button class="btn" style="width:400px; height:150px; background-color:white; border-radius:10px; border: 2px solid black">
@@ -43,3 +106,24 @@
             </button>
         </div> 
     </div>
+</body>  -->
+
+<body>
+  <div class="mall-container">
+    <div class="mall">
+      <a href="/parkir1">
+        <button>Mall 1</button>
+      </a>
+    </div>
+    <div class="mall">
+      <a href="/parkir2">
+        <button>Mall 2</button>
+      </a>
+    </div>
+    <div class="mall">
+      <a href="/parkir3">
+        <button>Mall 3</button>
+      </a>
+    </div> 
+  </div>
+</body>

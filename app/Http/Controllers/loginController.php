@@ -23,11 +23,11 @@ class loginController extends Controller
 
     if ($role == 'Admin') {
         return route('dashboard');
-    } elseif ($role == 'Petugas Masuk') {
+    } elseif ($role == 'Petugas Masuk 1') {
         return route('pmasuk1');
-    } elseif ($role == 'Petugas Ruang') {
+    } elseif ($role == 'Petugas Ruang 1') {
         return route('pruang1');
-    } elseif ($role == 'Petugas Keluar') {
+    } elseif ($role == 'Petugas Keluar 1') {
         return route('pkeluar1');
     } else {
         return route('login');

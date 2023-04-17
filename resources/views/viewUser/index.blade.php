@@ -5,26 +5,33 @@
     <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha1-dist/css/app.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+  
+  background-color: #627D9A;
+}
+    </style>
     </head>
 
-    <nav class="navbar navbar-expand-lg bg-light" >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/dashboard">Dashboard Admin</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <nav class="navbar navbar-expand-lg bg-dark" style="outline: 2px solid black">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/dashboard" style="color:white">Dashboard Admin</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item" style="font-size: 23px"><i class="bi bi-person-fill" style="margin-right: 5px"></i>Administrator</li>
+          <li class="nav-item" style="font-size: 23px; color:white"><i class="bi bi-person-fill" style="margin-right: 5px; color:white"></i>Administrator</li>
         </ul>
           <form action="/logout" method="post" class="d-flex align-items-center">
             @csrf
-            <button type="submit" class="btn btn-outline-danger"><i class="bi bi-box-arrow-right" style="margin-right: 5px"></i>Logout</button>
+            <button type="submit" class="btn" style="outline: 1px solid #ec5453; color:white"><i class="bi bi-box-arrow-right" style="margin-right: 5px"></i>Logout</button>
           </form>
         </div>
       </div>
     </nav>
     </html>
+    <body>
 @extends('layouts.master')
 @section('content')
     @if(session('sukses'))
@@ -32,6 +39,8 @@
         {{session('sukses')}}
         </div>
     @endif
+
+    
 
     <div class="row">
         <div class="col-6">
@@ -65,6 +74,7 @@
             @endforeach
         </table>
     </div>
+   
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -119,5 +129,6 @@
         </div>
     </div>
 </div>
+</body>
 @endsection
 
