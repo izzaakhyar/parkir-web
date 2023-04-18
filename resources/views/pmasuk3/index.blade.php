@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-expand-lg bg-dark" style="outline: 2px solid black">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/mall1" style="color:white">Dashboard Mall 1</a>
+      <a class="navbar-brand" href="/mall3" style="color:white">Dashboard Mall 3</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,7 +30,7 @@
     @else
     <nav class="navbar navbar-expand-lg bg-dark" style="outline: 2px solid black">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/mall1" style="color:white">Dashboard Mall 1</a>
+      <a class="navbar-brand" href="/mall3" style="color:white">Dashboard Mall 3</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -114,7 +114,7 @@
             </button>
         </div>
         <div class="modal-body">
-            <form action="/pmasuk1/add" method="POST">
+            <form action="/pmasuk3/add" method="POST">
             {{csrf_field()}}
             
                 <div class="form-group">

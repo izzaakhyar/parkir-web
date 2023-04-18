@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-expand-lg bg-dark" style="outline: 2px solid black">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/mall1" style="color:white">Dashboard Mall 1</a>
+      <a class="navbar-brand" href="/mall2" style="color:white">Dashboard Pakuwon Mall</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,7 +30,7 @@
     @else
     <nav class="navbar navbar-expand-lg bg-dark" style="outline: 2px solid black">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/mall1" style="color:white">Dashboard Mall 1</a>
+      <a class="navbar-brand" href="/mall2" style="color:white">Dashboard Pakuwon Mall</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -47,109 +47,52 @@
     </nav>
     @endif
     </html>
-
 @extends('layouts.master')
-@if(session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-@endif
+
 @section('content')
     @if(session('sukses'))
         <div class="alert alert-success" role="alert">
         {{session('sukses')}}
         </div>
     @endif
+
 <div class="row">
             <div class="col-6">
                 <h1>DATA Parkir</h1>
-            </div>
-            <div class="col-6">
-                <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
-                Tambah Kendaraan
-                </button>
-
             </div>
             <table class="table">
                 <tr>
                     <th>ID Parkir</th>
                     <th>Plat Nomor</th>
                     <th>Ruang</th>
-                    <th>Detail</th>
+                    <th>Aksi</th>
                 </tr>
+                
                 @foreach($data_parkir as $parkir)
-                @if($parkir->pernah_masuk == 0 || $parkir->sudah_masuk == 1)
+                @if($parkir->sudah_masuk == 1)
                 <tr>
-                    @if($parkir->ruangParkir == NULL)
-                        <tr style = 'background-color:red; color:white'>
+                    @if($parkir->sudah_masuk == 0)
+                        <tr style = 'background-color:green; color:white'>
                     @else
-                        <tr style = 'background-color:lightgreen'>
+                        <tr style = 'background-color:red; color:white'>
                     @endif
                     <td>{{$parkir->id}}</td>
                     <td>{{$parkir->platNomor}}</td>
-                    <td>{{$parkir->ruangParkir}}</td>
-                    
-                    @if($parkir->ruangParkir == NULL)
+                    @if($parkir->sudah_masuk == 0)
                         <td>Belum masuk</td>
                     @else
-                        <td>Sudah masuk</td>
+                        <td>{{$parkir->ruangParkir}}</td>
                     @endif
+                    <td>
+                    <a href="/pruang2/{{$parkir->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
+                    </td>
 
                 </tr>
                 @endif
                 @endforeach
+                
             </table>
         </div>
     </div>
-
-    <!-- Modal -->
     
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tambah Kendaraan</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <form action="/pmasuk1/add" method="POST">
-            {{csrf_field()}}
-            
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Plat Nomor</label>
-                    <input type="text" name="platNomor" class="form-control" placeholder="Plat Nomor"
-                    value="{{old('platNomor')}}">
-                    @error('platNomor')
-                        <div class="text-danger small">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="form-group" hidden>
-                <label for="exampleFormControlSelect1">Plat Nomor yang tersedia</label>
-                <select class="form-control" name="sudah_masuk" id="exampleFormControlSelect1">
-                    
-                    <option value="1">1</option>
-                    
-                </select>
-                </div>
-                <div class="form-group" hidden>
-                <label for="exampleFormControlSelect1">Plat Nomor yang tersedia</label>
-                <select class="form-control" name="pernah_masuk" id="exampleFormControlSelect1">
-                    
-                    <option value="1">1</option>
-                    
-                </select>
-                </div>
-                
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-        </div>
-    </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
-</html>
 @endsection

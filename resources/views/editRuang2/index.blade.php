@@ -9,7 +9,7 @@
     @endif
         <div class="row">
         <div class="col lg-12">
-        <form action="/pruang1/{{$data_parkir->id}}/update" method="POST">
+        <form action="/pruang2/{{$data_parkir->id}}/update" method="POST">
             {{csrf_field()}}
                 <div class="form-group">
                     <label for="exampleInputEmail1">Plat Nomor</label>
@@ -47,7 +47,7 @@
                 </select>
                 </div>
                 <!-- <div class="form-group" hidden>
-                <label for="exampleFormControlSelect1"></label>
+                <label for="exampleFormControlSelect1">Plat Nomor yang tersedia</label>
                 <select class="form-control" name="pernah_masuk" id="exampleFormControlSelect1">
                     
                     <option value="{{$data_parkir->pernah_masuk+=1}}">1</option>

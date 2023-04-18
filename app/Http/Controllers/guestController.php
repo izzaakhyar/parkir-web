@@ -11,7 +11,7 @@ class guestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function parkir1()
     {
         $data_ruang = \App\Models\parkir::all();
         $ruangan1 = array('A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10');
@@ -20,69 +20,21 @@ class guestController extends Controller
         return view('parkirMall.parkir1', compact('data_ruang', 'ruangan1', 'ruangan2', 'ruangan3'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function parkir2()
     {
-        //
+        $data_ruang = \App\Models\parkir2::all();
+        $ruangan1 = array('D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10');
+        $ruangan2 = array('E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9', 'E10');
+        $ruangan3 = array('F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10');
+        return view('parkirMall.parkir2', compact('data_ruang', 'ruangan1', 'ruangan2', 'ruangan3'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function parkir3()
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $data_ruang = \App\Models\parkir3::all();
+        $ruangan1 = array('G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'G9', 'G10');
+        $ruangan2 = array('H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H8', 'H9', 'H10');
+        $ruangan3 = array('I1', 'I2', 'I3', 'I4', 'I5', 'I6', 'I7', 'I8', 'I9', 'I10');
+        return view('parkirMall.parkir3', compact('data_ruang', 'ruangan1', 'ruangan2', 'ruangan3'));
     }
 }
