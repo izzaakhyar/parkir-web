@@ -72,7 +72,7 @@
             </div>
             <table class="table">
                 <tr>
-                    <th>ID Parkir</th>
+                    <th>No.</th>
                     <th>Plat Nomor</th>
                     <th>Ruang</th>
                     <th>Detail</th>
@@ -85,7 +85,7 @@
                     @else
                         <tr style = 'background-color:lightgreen'>
                     @endif
-                    <td>{{$parkir->id}}</td>
+                    <td>{{$i}}</td>
                     <td>{{$parkir->platNomor}}</td>
                     <td>{{$parkir->ruangParkir}}</td>
                     
@@ -94,8 +94,8 @@
                     @else
                         <td>Sudah masuk</td>
                     @endif
-
                 </tr>
+                <?php $i++; ?>
                 @endif
                 @endforeach
             </table>

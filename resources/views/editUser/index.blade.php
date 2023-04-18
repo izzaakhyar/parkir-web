@@ -7,9 +7,9 @@
         {{session('sukses')}}
         </div>
     @endif
-        <div class="row">
+    <div class="row">
         <div class="col lg-12">
-        <form action="/pegawai/{{$user->id}}/update" method="POST">
+            <form action="/pegawai/{{$user->id}}/update" method="POST">
             {{csrf_field()}}
                 <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
@@ -22,19 +22,19 @@
                     ="emailHelp" placeholder="password" value="{{$user->password}}">
                 </div>
                 <div class="form-group">
-                <label for="exampleFormControlSelect1">Role</label>
-                <select class="form-control" name="role" id="exampleFormControlSelect1">
-                    <option value="Petugas Masuk">Petugas Masuk</option>
-                    
-                    <option value="Petugas Ruang">Petugas Ruang</option>
-                    
-                    <option value="Petugas Keluar">Petugas Keluar</option>
-                    
-                </select>
+                    <label for="exampleFormControlSelect1">Role</label>
+                    <select class="form-control" name="role" id="exampleFormControlSelect1">
+                        <option value="Petugas Masuk">Petugas Masuk</option>
+                        
+                        <option value="Petugas Ruang">Petugas Ruang</option>
+                        
+                        <option value="Petugas Keluar">Petugas Keluar</option>
+                        
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
-        </form>
+            </form>
         </div>
-        </div>
+    </div>
 @endsection
 

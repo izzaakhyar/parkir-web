@@ -15,7 +15,8 @@ class pruang3Controller extends Controller
     public function index()
     {
         $data_parkir = \App\Models\parkir3::all();
-        return view('pruang3.index', ['data_parkir' => $data_parkir]);
+        $i = 1;
+        return view('pruang3.index', compact('data_parkir', 'i'));
     }
 
     public function edit($id){

@@ -91,6 +91,6 @@
         <a href="/keuangan3" class="btn btn-block btn-lg btn-light" style="width:1400px; height:150px; border-radius:10px; border: 2px solid black; font-size:53px; display: flex; justify-content: center; align-items: center; margin-left:170px">
           Laporan Keuangan
         </a>
-      </div>
-    </body>
-   </html> 
+    </div>
+</body>
+</html> 

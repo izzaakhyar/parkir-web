@@ -76,7 +76,7 @@
                     @else
                         <tr style = 'background-color:red; color:white'>
                     @endif
-                    <td>{{$parkir->id}}</td>
+                    <td>{{$i}}</td>
                     <td>{{$parkir->platNomor}}</td>
                     @if($parkir->sudah_masuk == 0)
                         <td>Belum masuk</td>
@@ -88,6 +88,7 @@
                     </td>
 
                 </tr>
+                <?php $i++; ?>
                 @endif
                 @endforeach
                 

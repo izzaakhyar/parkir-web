@@ -16,7 +16,6 @@
             border-color: black;
         }
     </style>
-    
 </head>
 <body style="background-color: #E5FE61">
     <div class="container">

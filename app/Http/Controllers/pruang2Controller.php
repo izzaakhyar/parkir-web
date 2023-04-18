@@ -15,7 +15,8 @@ class pruang2Controller extends Controller
     public function index()
     {
         $data_parkir = \App\Models\parkir2::all();
-        return view('pruang2.index', ['data_parkir' => $data_parkir]);
+        $i = 1;
+        return view('pruang2.index', compact('data_parkir', 'i'));
     }
 
     public function edit($id){
@@ -29,8 +30,6 @@ class pruang2Controller extends Controller
 
     public function update(Request $request,$id) {
         $data_parkir = \App\Models\parkir2::find($id);
-        // $data_ruang = \App\Models\ruang::find($id);
-        // $data_ruang->update($request->all());
         $data_parkir->update($request->all());
         return redirect('/pruang2')->with('sukses','Data berhasil diupdate');
     }

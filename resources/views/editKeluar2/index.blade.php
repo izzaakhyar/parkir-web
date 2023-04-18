@@ -7,9 +7,9 @@
         {{session('sukses')}}
         </div>
     @endif
-        <div class="row">
+    <div class="row">
         <div class="col lg-12">
-        <form action="/pkeluar2/{{$data_parkir->id}}/update" method="POST">
+            <form action="/pkeluar2/{{$data_parkir->id}}/update" method="POST">
             {{csrf_field()}}
                 <div class="form-group">
                     <label for="exampleInputEmail1">Plat Nomor</label>
@@ -18,33 +18,26 @@
                 </div>
                 
                 <div class="form-group">
-                <label for="exampleFormControlSelect1">Ruang</label>
+                    <label for="exampleFormControlSelect1">Ruang</label>
                 
-                <input type="text" name="ruangParkir" class="form-control" id="exampleInputEmail1" aria-describedby
-                    ="emailHelp" placeholder="{{$data_parkir->ruangParkir}}" value="" readonly>
+                    <input type="text" name="ruangParkir" class="form-control" id="exampleInputEmail1" aria-describedby
+                        ="emailHelp" placeholder="{{$data_parkir->ruangParkir}}" value="" readonly>
                 </div>
                 <div class="form-group" hidden>
-                <label for="exampleFormControlSelect1">Plat Nomor yang tersedia</label>
-                <select class="form-control" name="sudah_masuk" id="exampleFormControlSelect1">
-                    
-                    <option value="0">0</option>
-                    
-                </select>
+                    <label for="exampleFormControlSelect1">Plat Nomor yang tersedia</label>
+                    <select class="form-control" name="sudah_masuk" id="exampleFormControlSelect1">
+                        <option value="0">0</option>
+                    </select>
                 </div>
                 <div>
-                <label for="exampleFormControlSelect1">Tarif</label>
-                <select class="form-control" name="tarif" id="exampleFormControlSelect1">
-                    
-                    
-                   
+                    <label for="exampleFormControlSelect1">Tarif</label>
+                    <select class="form-control" name="tarif" id="exampleFormControlSelect1">
                         <option value="{{$data_parkir->pernah_masuk *= 5000}}" >Rp. 5000</option>
-                        
-                    
-                </select>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm
                         ('Apakah anda yakin ingin mengeluarkan Plat Nomor {{$data_parkir->platNomor}} dari ruang {{$data_parkir->ruangParkir}}?')">Keluarkan</button>
-        </form>
+            </form>
         </div>
-        </div>
+    </div>
 @endsection

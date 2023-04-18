@@ -19,7 +19,8 @@ class pmasuk1Controller extends Controller
     public function index()
     {
         $data_parkir = \App\Models\parkir::all();
-        return view('pmasuk1.index', ['data_parkir' => $data_parkir]);
+        $i = 1;
+        return view('pmasuk1.index', compact('data_parkir', 'i'));
     }
 
     public function add(Request $request)

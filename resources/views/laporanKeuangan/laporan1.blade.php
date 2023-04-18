@@ -23,8 +23,7 @@
         </div>
       </div>
     </nav>
-
-    </html>
+</html>
 @extends('layouts.master')
 @section('content')
     @if(session('sukses'))
@@ -33,20 +32,20 @@
         </div>
     @endif
     
-<div class="row" style="margin-left: -100px">
-            <div class="col-6">
-                <h1>Data Pemasukan Mall 1</h1>
-            </div>
-            <table class="table">
-                <tr style="background-color:#444654">
-                    <th style="color:white">No.</th>
-                    <th style="color:white">Plat Nomor</th>
-                    <th style="color:white">Jumlah Kunjungan</th>
-                    <th style="color:white">Tarif</th>
-                </tr>
+    <div class="row" style="margin-left: -100px">
+        <div class="col-6">
+            <h1>Data Pemasukan Mall 1</h1>
+        </div>
+        <table class="table">
+            <tr style="background-color:#444654">
+                <th style="color:white">No.</th>
+                <th style="color:white">Plat Nomor</th>
+                <th style="color:white">Jumlah Kunjungan</th>
+                <th style="color:white">Tarif</th>
+            </tr>
                 
-                  @foreach($data_parkir as $parkir)
-                  @if ($parkir->tarif > 0)
+            @foreach($data_parkir as $parkir)
+                @if ($parkir->tarif > 0)
                   <tr>
                       <td>{{$i}}</td>
                       <td>{{$parkir->platNomor}}</td>
@@ -54,17 +53,16 @@
                       <td>{{$parkir->tarif}}</td>
                   </tr>
                   <?php $i++; ?>
-                  @endif
-                  @endforeach
-                <tr style="background-color:#444654">
-                    <td style="color:white">Total Pemasukan:</td>
-                    <td></td>
-                    <td></td>
-                    <td style="color:white">{{ $total_tarif }}</td>
-                </tr>
-            </table>
-        </div>
+                @endif
+            @endforeach
+            <tr style="background-color:#444654">
+                <td style="color:white">Total Pemasukan:</td>
+                <td></td>
+                <td></td>
+                <td style="color:white">{{ $total_tarif }}</td>
+            </tr>
+        </table>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 </html>
 @endsection

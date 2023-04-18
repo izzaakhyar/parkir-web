@@ -11,7 +11,7 @@
 
     <nav class="navbar navbar-expand-lg bg-dark" style="outline: 2px solid black">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/mall2" style="color:white">Dashboard Pakuwon Mall</a>
+      <a class="navbar-brand" href="/mall2" style="color:white">Dashboard Mall 2</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,7 +30,7 @@
     @else
     <nav class="navbar navbar-expand-lg bg-dark" style="outline: 2px solid black">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/mall2" style="color:white">Dashboard Pakuwon Mall</a>
+      <a class="navbar-brand" href="/mall2" style="color:white">Dashboard Mall 2</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -56,47 +56,43 @@
     @endif
     
 <div class="row">
-            <div class="col-6">
-                <h1>Data Kendaraan</h1>
-            </div>
-            <!-- <div style="margin-right:300px">
-        <h3>Total Tarif Parkir: {{ $total_tarif }}</h3>
-    </div> -->
-            <table class="table">
-                <tr>
-                    <th>ID Parkir</th>
-                    <th>Plat Nomor</th>
-                    <th>Ruang</th>
-                    <th>Aksi</th>
-                </tr>
-                @foreach($data_parkir as $parkir)
-                
-                <tr>
-                    @if($parkir->sudah_masuk == 0)
-                        <tr style = 'background-color:green; color:white'>
-                    @else
-                        <tr style = 'background-color:red; color:white'>
-                    @endif
-                    <td>{{$parkir->id}}</td>
-                    <td>{{$parkir->platNomor}}</td>
-                    @if($parkir->sudah_masuk == 0)
-                        <td>Sudah Keluar</td>
-                    @else
-                        <td>{{$parkir->ruangParkir}}</td>
-                    @endif
-                    @if($parkir->sudah_masuk == 0)
-                        <td>Tidak ada aksi yang tersedia</td>
-                    @else
-                    <td>
-                    <a href="/pkeluar2/{{$parkir->id}}/edit" class="btn btn-danger btn-sm">Keluarkan</a>
-                    </td>
-                    @endif
-                </tr>
-                @endforeach
-            </table>
-            
-        </div>
+    <div class="col-6">
+        <h1>Data Kendaraan</h1>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <table class="table">
+        <tr>
+            <th>ID Parkir</th>
+            <th>Plat Nomor</th>
+            <th>Ruang</th>
+            <th>Aksi</th>
+        </tr>
+        @foreach($data_parkir as $parkir)
+            <tr>
+                @if($parkir->sudah_masuk == 0)
+                    <tr style = 'background-color:green; color:white'>
+                @else
+                    <tr style = 'background-color:red; color:white'>
+                @endif
+                <td>{{$i}}</td>
+                <td>{{$parkir->platNomor}}</td>
+                @if($parkir->sudah_masuk == 0)
+                    <td>Sudah Keluar</td>
+                @else
+                    <td>{{$parkir->ruangParkir}}</td>
+                @endif
+                @if($parkir->sudah_masuk == 0)
+                    <td>Tidak ada aksi yang tersedia</td>
+                @else
+                <td>
+                    <a href="/pkeluar2/{{$parkir->id}}/edit" class="btn btn-danger btn-sm">Keluarkan</a>
+                </td>
+                @endif
+            </tr>
+        <?php $i++; ?>
+        @endforeach
+    </table>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 </html>
 @endsection
