@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2023 at 02:52 PM
+-- Generation Time: Apr 18, 2023 at 04:30 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -66,13 +66,13 @@ CREATE TABLE `parkir` (
 --
 
 INSERT INTO `parkir` (`id`, `platNomor`, `ruangParkir`, `sudah_masuk`, `pernah_masuk`, `tarif`, `created_at`, `updated_at`) VALUES
-(1, 'L123DAS', 'B4', 1, 3, 10000, NULL, '2023-04-18 05:31:22'),
+(1, 'L123DAS', NULL, 1, 4, 15000, NULL, '2023-04-18 07:24:56'),
 (2, 'L4738ASD', NULL, 0, 1, 5000, NULL, '2023-04-18 04:36:45'),
 (3, 'L7834HYU', 'B8', 1, 1, 0, NULL, '2023-04-18 04:35:51'),
 (4, 'L8374HY', 'A6', 1, 1, 0, NULL, '2023-04-18 04:39:04'),
-(5, 'DK3642Y', 'A10', 1, 1, 0, NULL, '2023-04-18 04:39:11'),
+(5, 'DK3642Y', NULL, 0, 1, 5000, NULL, '2023-04-18 07:19:27'),
 (6, 'L2341UER', NULL, 1, 1, 0, '2023-04-18 05:32:14', '2023-04-18 05:32:14'),
-(7, 'ASDA', NULL, 0, 1, 5000, '2023-04-18 05:37:17', '2023-04-18 05:37:57');
+(7, 'ASDA', NULL, 1, 1, 5000, '2023-04-18 05:37:17', '2023-04-18 05:37:57');
 
 -- --------------------------------------------------------
 
@@ -101,7 +101,8 @@ INSERT INTO `parkir2` (`id`, `platNomor`, `ruangParkir`, `sudah_masuk`, `pernah_
 (4, 'L1237DAS', NULL, 0, 1, 5000, NULL, '2023-04-18 04:46:04'),
 (5, 'L7484HU', 'D3', 1, 1, 0, NULL, '2023-04-18 04:45:22'),
 (6, 'L8341GH', 'D10', 1, 1, 0, NULL, '2023-04-18 04:45:30'),
-(7, 'L6434YU', 'D1', 1, 1, 0, NULL, '2023-04-18 04:45:37');
+(7, 'L6434YU', 'D1', 1, 1, 0, NULL, '2023-04-18 04:45:37'),
+(8, 'L4738ASD', NULL, 1, 2, 5000, NULL, '2023-04-18 07:27:23');
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,8 @@ CREATE TABLE `parkir3` (
 INSERT INTO `parkir3` (`id`, `platNomor`, `ruangParkir`, `sudah_masuk`, `pernah_masuk`, `tarif`, `created_at`, `updated_at`) VALUES
 (1, 'S1234HYD', 'G8', 1, 1, 0, NULL, '2023-04-18 01:45:22'),
 (2, 'S8492IU', NULL, 0, 1, 5000, NULL, '2023-04-18 04:54:48'),
-(3, 'S9028DE', NULL, 1, 1, 0, NULL, NULL);
+(3, 'S9028DE', NULL, 1, 1, 0, NULL, NULL),
+(4, 'DK3642Y', NULL, 1, 2, 5000, NULL, '2023-04-18 07:29:08');
 
 -- --------------------------------------------------------
 
@@ -239,13 +241,13 @@ ALTER TABLE `parkir`
 -- AUTO_INCREMENT for table `parkir2`
 --
 ALTER TABLE `parkir2`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `parkir3`
 --
 ALTER TABLE `parkir3`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ruangan`
