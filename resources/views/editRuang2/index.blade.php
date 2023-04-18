@@ -18,7 +18,7 @@
                 </div>
                 
                 <div class="form-group">
-                <label for="exampleFormControlSelect1">Plat Nomor yang tersedia</label>
+                <label for="exampleFormControlSelect1">Pilih Ruangan Parkir</label>
                 <select class="form-control" name="ruangParkir" id="exampleFormControlSelect1">
                     
                     <option value="" disabled selected>Lantai 1...</option>

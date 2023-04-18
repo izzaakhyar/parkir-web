@@ -114,7 +114,7 @@
     <?php $flag = false; $processed = false; ?>
     @foreach ($data_ruang as $ruang)
         @if ($ruangan2[$i] == $ruang->ruangParkir && $ruang->platNomor != 'NULL')
-            <div class="box" style='width:170px; height:200px; background-color:#ec5453; border-radius:15px; display:inline-block'>
+            <div class="box" style='width:170px; height:200px; background-color:#ec5453; border-radius:15px; display:inline-block; margin-left:135px'>
                 <div class="ruang" style='color:white; text-align:center; padding-top:15px'>
                     {{ $ruangan2[$i] }}
                 </div>
@@ -152,7 +152,7 @@
     <?php $flag = false; $processed = false; ?>
     @foreach ($data_ruang as $ruang)
         @if ($ruangan3[$i] == $ruang->ruangParkir && $ruang->platNomor != 'NULL')
-            <div class="box" style='width:170px; height:200px; background-color:#ec5453; border-radius:15px; display:inline-block'>
+            <div class="box" style='width:170px; height:200px; background-color:#ec5453; border-radius:15px; display:inline-block; margin-left:135px'>
                 <div class="ruang" style='color:white; text-align:center; padding-top:15px'>
                     {{ $ruangan3[$i] }}
                 </div>
