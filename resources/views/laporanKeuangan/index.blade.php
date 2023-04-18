@@ -44,42 +44,18 @@
                     <th style="color:white">Jumlah Kunjungan</th>
                     <th style="color:white">Tarif</th>
                 </tr>
-                
-                  @foreach($data_parkir as $parkir)
-                  @if ($parkir->tarif > 0)
-                  <tr>
-                      <td>{{$i}}</td>
-                      <td>{{$parkir->platNomor}}</td>
-                      <td>{{$parkir->pernah_masuk}}</td>
-                      <td>{{$parkir->tarif}}</td>
-                  </tr>
-                  <?php $i++; ?>
-                  @endif
-                  @endforeach
-
-                  @foreach($data_parkir2 as $parkir)
-                  @if ($parkir->tarif > 0)
-                  <tr>
-                      <td>{{$i}}</td>
-                      <td>{{$parkir->platNomor}}</td>
-                      <td>{{$parkir->pernah_masuk}}</td>
-                      <td>{{$parkir->tarif}}</td>
-                  </tr>
-                  <?php $i++; ?>
-                  @endif
-                  @endforeach
-
-                  @foreach($data_parkir3 as $parkir)
-                  @if ($parkir->tarif > 0)
-                  <tr>
-                      <td>{{$i}}</td>
-                      <td>{{$parkir->platNomor}}</td>
-                      <td>{{$parkir->pernah_masuk}}</td>
-                      <td>{{$parkir->tarif}}</td>
-                  </tr>
-                  <?php $i++; ?>
-                  @endif
-                  @endforeach
+                  
+                @foreach($grouped_data as $parkir)
+                @if ($parkir->tarif > 0)
+                <tr>
+                    <td>{{$i}}</td>
+                    <td>{{$parkir->platNomor}}</td>
+                    <td>{{$parkir->pernah_masuk}}</td>
+                    <td>{{$parkir->tarif}}</td>
+                </tr>
+                <?php $i++; ?>
+                @endif
+                @endforeach
                 <tr style="background-color:#444654">
                     <td style="color:white">Total Pemasukan:</td>
                     <td></td>

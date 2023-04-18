@@ -17,12 +17,19 @@ class laporanController extends Controller
         $data_parkir2 = \App\Models\parkir2::all();
         $data_parkir3 = \App\Models\parkir3::all();
 
-        $total1 = \App\Models\parkir::sum('tarif');
-        $total2 = \App\Models\parkir2::sum('tarif');
-        $total3 = \App\Models\parkir3::sum('tarif');
-        $total_keseluruhan = $total1 + $total2 + $total3;
+        $merged_data = collect($data_parkir)->merge($data_parkir2)->merge($data_parkir3);
+
+        $grouped_data = $merged_data->groupBy('platNomor')->map(function ($group) {
+            $parkir = $group->first();
+            $parkir->pernah_masuk = $group->sum('pernah_masuk');
+            $parkir->tarif = $group->sum('tarif');
+            return $parkir;
+        });
+
+        $total_keseluruhan = $grouped_data->sum('tarif');
         $i = 1;
-        return view('laporanKeuangan.index', compact('data_parkir', 'data_parkir2', 'data_parkir3', 'total_keseluruhan', 'i'));
+
+        return view('laporanKeuangan.index', compact('grouped_data', 'total_keseluruhan', 'i'));
     }
 
     public function laporan1()
